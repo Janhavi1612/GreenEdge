@@ -7,9 +7,9 @@ const containerStyle = {
   width: '800px',
   height: '800px'
 };
-export default function Home() {
+export default function RenderMap() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: '',
+    googleMapsApiKey: ''
   });
 
   if (!isLoaded) return <div>Loading...</div>;
@@ -19,24 +19,18 @@ export default function Home() {
 function Map() {
   //return <div>Map</div>
    const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
-  return (
-    <GoogleMap zoom={10} center={center} mapContainerStyle={containerStyle}>
-      <KmlLayer url='https://getcapstonebucket.s3.us-east-2.amazonaws.com/westcampus.kml'
-      //  options={{ preserveViewport : true}}
-       />
-    </GoogleMap>
-  );
-
-//   kmlLayer.addListener('click', function(event) {
-//     var content = event.featureData.infoWindowHtml;
-//     var testimonial = document.getElementById('capture');
-//     testimonial.innerHTML = content;
-// });
   // return (
   //   <GoogleMap zoom={10} center={center} mapContainerStyle={containerStyle}>
-  //     <MarkerF position={center} />
+  //     <KmlLayer url='https://getcapstonebucket.s3.us-east-2.amazonaws.com/westcampus.kml'/>
   //   </GoogleMap>
   // );
+
+
+  return (
+    <GoogleMap zoom={10} center={center} mapContainerStyle={containerStyle}>
+      <MarkerF position={center} />
+    </GoogleMap>
+  );
 
   
 }
