@@ -3,7 +3,7 @@
 // Unemployment : #e07b39   (orange)
 // Population Density : #00cc66 (Green)
 
-import data from "/Users/kiara/Shreya/CMU/MISM Semester 3/Capstone/codes/GreenEdge/frontend/src/data/data.json"
+import data from "C:\\Users\\janha\\Desktop\\Greenedge\\GreenEdge\\frontend\\src\\data\\data.json"
 //input we would get from form
 let ids = ["011","021"]
 
@@ -17,7 +17,7 @@ const options = {
     strokeWeight: 0.1,
     fillColor: '#FF0000',
     fillOpacity: 0.35,
-    clickable: false,
+    clickable: true,
     radius: 800,
   }
 
@@ -34,7 +34,7 @@ filterdata = filterdata.map(item => {
     let op = options
     op.strokeColor = colormapping[item.id.substring(0,2)]
     op.fillColor = colormapping[item.id.substring(0,2)]
-    return {...item, options:op }
+    return {...item, options:op , data: item.name}
 })
 
 

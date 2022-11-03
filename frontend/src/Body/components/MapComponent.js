@@ -29,26 +29,32 @@ const options = {
     fillColor: '#FF0000',
     fillOpacity: 0.35,
     clickable: false,
-    radius: 800,
+    radius: 3000,
   }
 
-function createCircle(metadata){
+function createCircle(metadata, prop){
   let op = options
   op.fillColor = metadata.color
   op.strokeColor = metadata.color
   console.log(op)
    console.log(metadata)
-  return(<Circle
+
+    const onCircleClick = (metadata) => {
+      prop.setText(metadata.data)
+    }
+
+    return(<Circle
     
     
     center={metadata.center}
     options={metadata.options}
     onLoad={onLoad}
     onUnmount={onUnmount}
+    onClick={() => onCircleClick(metadata)}
   />)
 }
 
-function MyComponent() {
+function MyComponent(prop) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyD5ernPUMCOp0QHET9gPW5XPyHVKpHVn5E'
@@ -68,7 +74,7 @@ function MyComponent() {
         center={center}
         zoom={10}
       >
-{datapoints.map((point)=> createCircle(point))}
+{datapoints.map((point)=> createCircle(point, prop))}
       </GoogleMap>
   ) : <></>
 }
