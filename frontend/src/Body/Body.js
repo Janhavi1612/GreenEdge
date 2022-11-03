@@ -5,6 +5,7 @@ import Toggle from './components/Toggle';
 import Export from './components/Export';
 import RenderMap from './components/Map';
 import RangeSlider from './components/Slider';
+import MyComponent from './components/MapComponent'
 import { Col, Row } from 'antd';
 
 const Body = () => {
@@ -17,7 +18,7 @@ const Body = () => {
       <Row style={{paddingTop:"20px"}}><Export /></Row>
       
       </Col>
-      <Col><RenderMap /></Col>
+      <Col><MyComponent /></Col>
     </Row>
     
   )
