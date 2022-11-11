@@ -1,0 +1,7 @@
+{"type": "FeatureCollection", "features":[
+{"type":"Feature","properties":{"name":"Google West Campus 1 LowIncome"},"geometry":{"type":"Point","coordinates":[-122.0914977709329,37.42390182131783]}}
+,
+{"type":"Feature","properties":{"name":"Google West Campus 2 LowIncome"},"geometry":{"type":"Point","coordinates":[-122.0926995893311,37.42419403634421]}}
+,
+{"type":"Feature","properties":{"name":"Google West Campus 3 HighIncome"},"geometry":{"type":"Point","coordinates":[-122.0922532985281,37.42301710721216]}}
+]}
