@@ -12,17 +12,17 @@ import { Col, Row } from 'antd';
 
 const Body = () => {
     const [text, setText] = useState('')
+    const [filterData, setFilterData] = useState('initialData')
     //const filter values
   return (
     <Row  style={{marginLeft: "50px"}}>
       <Col>
-      <Row><Filter /></Row>
-      <div style={{padding:"24px"}}><RangeSlider /></div>
-      <Row style={{paddingTop:"20px"}}><Toggle /></Row>
+      <Row><Filter setFilterData={setFilterData}/></Row>
       <Row style={{paddingTop:"20px"}}><Export /></Row>
-          <Row style={{paddingTop:"20px"}}><InfoComponent text={text} /></Row>
+          {/*<Row style={{paddingTop:"20px"}}><InfoComponent text={text} /></Row>*/}
       </Col>
-      <Col><MyComponent setText={setText}/></Col>
+      <Col><MyComponent setText={setText} filterData={filterData}/></Col>
+        <Col><InfoComponent text={text} /></Col>
     </Row>
 
   )

@@ -15,22 +15,22 @@ const center = {
 
 const onLoad = circle => {
   //circle.fillColor = '#FF0000'
-  //console.log('Circle onLoad circle: ', circle)
+  console.log('Circle onLoad circle: ', circle)
 }
 
 const onUnmount = circle => {
-  //console.log('Circle onUnmount circle: ', circle)
+  console.log('Circle onUnmount circle: ', circle)
 }
-
-let options = {
-    strokeColor: '#FF0000',
-    strokeOpacity: 0.8,
-    strokeWeight: 0.1,
-    fillColor: '#FF0000',
-    fillOpacity: 0.35,
-    clickable: false,
-    radius: 400,
-  }
+//
+// let options = {
+//     strokeColor: '#FF0000',
+//     strokeOpacity: 0.8,
+//     strokeWeight: 0.1,
+//     fillColor: '#FF0000',
+//     fillOpacity: 0.35,
+//     clickable: false,
+//     radius: 400,
+//   }
 
 function createCircle(metadata, prop){
 /*
@@ -48,7 +48,8 @@ function createCircle(metadata, prop){
 
     console.log(metadata)*/
 
-    const onCircleClick = (metadata) => {
+    // console.log(center)
+    const onCircleHover = (metadata) => {
       prop.setText(metadata.data)
     }
 
@@ -57,13 +58,11 @@ function createCircle(metadata, prop){
     }
 
     return(<Circle
-
-
     center={metadata.center}
     options={{fillColor: metadata.color, strokeColor:metadata.color, strokeOpacity: 0.5, fillOpacity: 0.5 , radius: 400}}
     onLoad={onLoad}
     onUnmount={onUnmount}
-    onMouseOver={() => onCircleClick(metadata)}
+    onMouseOver={() => onCircleHover(metadata)}
     onMouseOut={() => onMouseUpCircle(metadata)}
   />
     )
@@ -75,29 +74,32 @@ function MyComponent(prop) {
     googleMapsApiKey: 'AIzaSyD5ernPUMCOp0QHET9gPW5XPyHVKpHVn5E'
   })
 
-  const [map, setMap] = React.useState(null)
- 
+
   const center = {lat: 40.0146129,
     lng: -77.0916161}
     
-  
-  let datapoints = getDatapoint()
-  
-  return isLoaded ? (
+
+  let datapoints = getDatapoint(prop.filterData)
+    console.log(datapoints)
+
+    return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
         zoom={13}
       >
-{
-    //check if the show evse is checked --> if yes --> call showMarkers()
-    datapoints.map((point)=> createCircle(point, prop))}
+    {
+        // datapoints.forEach((point) => createCircle(point, prop))
+        //check if the show evse is checked --> if yes --> call showMarkers()
+        datapoints.map((point)=> createCircle(point, prop))
+    }
       </GoogleMap>
   ) : <></>
 }
 
-export default React.memo(MyComponent)
+// export default React.memo(MyComponent)
 
+export default MyComponent
 
 
 //{centers.map((cent)=> createCircle(cent))}
