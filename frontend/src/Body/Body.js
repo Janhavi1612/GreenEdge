@@ -18,9 +18,10 @@ const Body = () => {
       <div style={{padding:"24px"}}><RangeSlider /></div>
       <Row style={{paddingTop:"20px"}}><Toggle /></Row>
       <Row style={{paddingTop:"20px"}}><Export /></Row>
-          <Row style={{paddingTop:"20px"}}><InfoComponent text={text} /></Row>
+   
       </Col>
       <Col><MyComponent setText={setText}/></Col>
+      <Col><InfoComponent text={text} /></Col>
     </Row>
     
   )
