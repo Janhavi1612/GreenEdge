@@ -11,7 +11,7 @@ const Header = () => {
         <Col flex={1}>
         </Col>
         <Col flex={9}>
-          <SearchBar />
+          {/*<SearchBar />*/}
         </Col>
         <Col flex={3}>
         <Avatar style={{ backgroundColor: '#448ff7' }} icon={<UserOutlined />} />

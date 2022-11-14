@@ -22,19 +22,35 @@ const onLoad = circle => {
 const onUnmount = circle => {
   console.log('Circle onUnmount circle: ', circle)
 }
-
-let options = {
-    strokeColor: '#FF0000',
-    strokeOpacity: 0.8,
-    strokeWeight: 0.1,
-    fillColor: '#FF0000',
-    fillOpacity: 0.35,
-    clickable: false,
-    radius: 400,
-  }
+//
+// let options = {
+//     strokeColor: '#FF0000',
+//     strokeOpacity: 0.8,
+//     strokeWeight: 0.1,
+//     fillColor: '#FF0000',
+//     fillOpacity: 0.35,
+//     clickable: false,
+//     radius: 400,
+//   }
 
 function createCircle(metadata, prop){
-    const onCircleClick = (metadata) => {
+/*
+  let op = options
+  op.fillColor = metadata.color
+  op.strokeColor = metadata.color
+*/
+/*
+    console.log('inside create circle')
+    console.log(metadata.options)
+    options.fillColor = metadata.color
+    options.strokeColor = metadata.color
+
+    metadata.options = options
+
+    console.log(metadata)*/
+
+    // console.log(center)
+    const onCircleHover = (metadata) => {
       prop.setText(metadata.values)
     }
 
@@ -47,7 +63,7 @@ function createCircle(metadata, prop){
     options={{fillColor: metadata.color, strokeColor:metadata.color, strokeOpacity: 0.5, fillOpacity: 0.5 , radius: 400}}
     onLoad={onLoad}
     onUnmount={onUnmount}
-    onMouseOver={() => onCircleClick(metadata)}
+    onMouseOver={() => onCircleHover(metadata)}
     onMouseOut={() => onMouseUpCircle(metadata)}
   />
     )
@@ -99,4 +115,9 @@ function MyComponent(prop) {
   ) : <></>
 }
 
-export default React.memo(MyComponent)
+// export default React.memo(MyComponent)
+
+export default MyComponent
+
+
+//{centers.map((cent)=> createCircle(cent))}

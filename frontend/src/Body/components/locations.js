@@ -1,30 +1,64 @@
 import data from "../../data/data.json"
+import filterMap from './filterIDMap'
+import colorMap from "./colorMap";
 //input we would get from form UI
-let ids = ["020"]
-
-
-//define color mapping 
-
-let colormapping = {"000":"#275881","001":"#4b8bbf","002":"#87b2d4",
-}
-
-
-//Get data of the selected ids
-let filterdata = data.data.filter(item => ids.includes(item.id))
-
-
-//Add color to each object
+// map for varname to filter id
+//
+// let ids = ['011', '021']
+//
+// //define color mapping
+// let colormapping = {"01":"#e07b39","02":"#2596be","03":"#00cc66"}
+//
+//
+// //Get data of the selected ids
+// let filterdata = data.data.filter(item => ids.includes(item.id))
+//
+// //Add color to each object
 // filterdata = filterdata.map(item => {
 //     return {...item, color:colormapping[item.id.substring(0,2)], data:item.name}
 // })
+//
+//
+// function getSelectedFilters(filters) {
+//     let allFilters = Object.keys(filters)
+//     let allFilterValues = Object.values(filters)
+//     let selectedFilters = []
+//
+//     for (let i = 0; i < allFilterValues.length; i++) {
+//         if (allFilterValues[i] == true) {
+//             selectedFilters.push(allFilters[i])
+//         }
+//     }
+//
+//     return selectedFilters
+// }
 
-filterdata = filterdata.map(item => {
-  return {...item, color:colormapping[item.id]}
-})
 
+function generateFilterData(selectedFilters) {
+    let generatedFilterdata = data.data.filter(item => selectedFilters.includes(item.id))
 
-export default function getDatapoint(){
-  return(filterdata)
+    //Add color to each object
+    generatedFilterdata = generatedFilterdata.map(item => {
+        //return {...item, color:colorMap[item.id.substring(0,2)], data:item.name}
+        return {...item, color:colorMap[item.id.substring(0,]}
+    })
+
+    return generatedFilterdata
+}
+
+export default function getDatapoint(filters){
+    let allFilters = Object.keys(filters)
+    let allFilterValues = Object.values(filters)
+    let selectedFilters = []
+
+    for (let i = 0; i < allFilterValues.length; i++) {
+        if (allFilterValues[i] == true) {
+            //add id s of the selected filters in our list
+            selectedFilters.push(filterMap[allFilters[i].toString()])
+        }
+    }
+
+    return generateFilterData(selectedFilters)
 }
 
 
