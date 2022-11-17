@@ -21,34 +21,9 @@ const onLoad = circle => {
 const onUnmount = circle => {
   console.log('Circle onUnmount circle: ', circle)
 }
-//
-// let options = {
-//     strokeColor: '#FF0000',
-//     strokeOpacity: 0.8,
-//     strokeWeight: 0.1,
-//     fillColor: '#FF0000',
-//     fillOpacity: 0.35,
-//     clickable: false,
-//     radius: 400,
-//   }
 
-function createCircle(metadata, prop){
-/*
-  let op = options
-  op.fillColor = metadata.color
-  op.strokeColor = metadata.color
-*/
-/*
-    console.log('inside create circle')
-    console.log(metadata.options)
-    options.fillColor = metadata.color
-    options.strokeColor = metadata.color
+function createCircleOrMarker(metadata, prop){
 
-    metadata.options = options
-
-    console.log(metadata)*/
-
-    // console.log(center)
     const onCircleHover = (metadata) => {
       prop.setText(metadata.data)
     }
@@ -89,17 +64,13 @@ function MyComponent(prop) {
         zoom={13}
       >
     {
-        // datapoints.forEach((point) => createCircle(point, prop))
-        //check if the show evse is checked --> if yes --> call showMarkers()
-        datapoints.map((point)=> createCircle(point, prop))
+        datapoints.map((point)=> createCircleOrMarker(point, prop))
     }
       </GoogleMap>
   ) : <></>
 }
 
-// export default React.memo(MyComponent)
 
 export default MyComponent
 
 
-//{centers.map((cent)=> createCircle(cent))}
