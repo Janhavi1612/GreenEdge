@@ -1,6 +1,6 @@
 import React from "react";
 import { Collapse } from "react-collapse";
-import { Button } from "antd";
+import { Button,Checkbox, Card } from "antd";
 
 class HouseholdIncome extends React.PureComponent {
   constructor(props) {
@@ -76,246 +76,169 @@ class HouseholdIncome extends React.PureComponent {
 
     return (
         <div>
-          <div className="config">
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel1}
-                  onChange={({ target: { checked } }) => {
-                    this.setState({HouseholdIncomeLevel1: checked})
-                    //this.props.setFilterData()
-                  }
-                  }
-              />
-              $35,000 to $74,999
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel2: checked })
-                  }
-              />
-              $75,000 to $99,999
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel3: checked })
-                  }
-              />
-              $100,000 to $150,000
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel4}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel4: checked })
-                  }
-              />
-              $150,000+
-            </label>
-            <br></br>
-            <h2>Unemployment</h2>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={UnemploymentLevel1}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ UnemploymentLevel1: checked })
-                  }
-              />
-              Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={UnemploymentLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ UnemploymentLevel2: checked })
-                  }
-              />
-              2nd Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={UnemploymentLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ UnemploymentLevel3: checked })
-                  }
-              />
-              3rd Most Dense
-            </label>
-            <br></br>
-            <h2>Population Density</h2>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={PopulationDensityLevel1}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ PopulationDensityLevel1: checked })
-                  }
-              />
-              Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={PopulationDensityLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ PopulationDensityLevel2: checked })
-                  }
-              />
-              2nd Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={PopulationDensityLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ PopulationDensityLevel3: checked })
-                  }
-              />
-              3rd Most Dense
-            </label>
-            <br></br>
-            <h2>Number of Home Owners</h2>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={NumberofHomeOwnersLevel1}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ NumberofHomeOwnersLevel1: checked })
-                  }
-              />
-              Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={NumberofHomeOwnersLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ NumberofHomeOwnersLevel2: checked })
-                  }
-              />
-              2nd Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={NumberofHomeOwnersLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ NumberofHomeOwnersLevel3: checked })
-                  }
-              />
-              3rd Most Dense
-            </label>
-            <br></br>
-            <h2>Number of Renters</h2>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={NumberofRentersLevel1}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ NumberofRentersLevel1: checked })
-                  }
-              />
-              Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={NumberofRentersLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ NumberofRentersLevel2: checked })
-                  }
-              />
-              2nd Most Dense
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={NumberofRentersLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ NumberofRentersLevel3: checked })
-                  }
-              />
-              3rd Most Dense
-            </label>
-            <br></br>
-            <h2>Demographic Index</h2>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={DemographicIndexLevel1}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ DemographicIndexLevel1: checked })
-                  }
-              />
-              0-0.29
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={DemographicIndexLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ DemographicIndexLevel2: checked })
-                  }
-              />
-              0.30-0.69
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={DemographicIndexLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ DemographicIndexLevel3: checked })
-                  }
-              />
-              0.7-1.0
-            </label>
-            <br></br>
 
-            {/*<Button type="primary" shape="round">*/}
-            {/*  Submit*/}
-            {/*</Button>*/}
+          <div>
+            <div style={{backgroundColor:"#D48C82", padding:"5px",width:"220px"}}>
+              <Card title="Household Income"
+                  bordered={true}
+                  style={{width: 210, height: 150}}
+                  size="small">
+                <Checkbox 
+                checked={HouseholdIncomeLevel1}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ HouseholdIncomeLevel1: checked })
+                  }>$35,000 to $74,999</Checkbox><br/>
+                
+                <Checkbox 
+                checked={HouseholdIncomeLevel2}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ HouseholdIncomeLevel2: checked })
+                  }>$75,000 to $99,999</Checkbox><br/>
+
+                <Checkbox 
+                checked={HouseholdIncomeLevel3}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ HouseholdIncomeLevel3: checked })
+                  }>$100,000 to $150,000</Checkbox><br/>
+
+                <Checkbox 
+                checked={HouseholdIncomeLevel4}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ HouseholdIncomeLevel4: checked })
+                  }>$150,000+</Checkbox><br/>
+            </Card>
+            </div>
+              
+
+            <div style={{backgroundColor:"#A57CAB", padding:"5px",width:"220px"}}>
+              <Card title="Unemployment"
+                  bordered={true}
+                  style={{width: 210, height: 125}}
+                  size="small">
+                <Checkbox 
+                checked={UnemploymentLevel1}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ UnemploymentLevel1: checked })
+                  }>Most Dense</Checkbox><br/>
+                
+                <Checkbox 
+                checked={UnemploymentLevel2}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ UnemploymentLevel2: checked })
+                  }>2nd Most Dense</Checkbox><br/>
+
+                <Checkbox 
+                checked={UnemploymentLevel3}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ UnemploymentLevel3: checked })
+                  }>3rd Most Dense</Checkbox><br/>
+            </Card>
+            </div>
+            
+            <div style={{backgroundColor:"#E2B586", padding:"5px",width:"220px"}}>
+              <Card title="Population Density"
+                  bordered={true}
+                  style={{width: 210, height: 125}}
+                  size="small">
+                <Checkbox 
+                checked={PopulationDensityLevel1}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ PopulationDensityLevel1: checked })
+                  }>Most Dense</Checkbox><br/>
+                
+                <Checkbox 
+                checked={PopulationDensityLevel2}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ PopulationDensityLevel2: checked })
+                  }>2nd Most Dense</Checkbox><br/>
+
+                <Checkbox 
+                checked={PopulationDensityLevel3}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ PopulationDensityLevel3: checked })
+                  }>3rd Most Dense</Checkbox><br/>
+            </Card>
+            </div>
+
+            
+            <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+              <Card title="Number of Home Owners"
+                  bordered={true}
+                  style={{width: 210, height: 125}}
+                  size="small">
+                <Checkbox 
+                checked={NumberofHomeOwnersLevel1}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ NumberofHomeOwnersLevel1: checked })
+                  }>Most Dense</Checkbox><br/>
+                
+                <Checkbox 
+                checked={NumberofHomeOwnersLevel2}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ NumberofHomeOwnersLevel2: checked })
+                  }>2nd Most Dense</Checkbox><br/>
+
+                <Checkbox 
+                checked={NumberofHomeOwnersLevel3}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ NumberofHomeOwnersLevel3: checked })
+                  }>3rd Most Dense</Checkbox><br/>
+            </Card>
+            </div>
+
+            
+
+          <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+              <Card title="Number of Renters"
+                  bordered={true}
+                  style={{width: 210, height: 125}}
+                  size="small">
+                <Checkbox 
+                checked={NumberofRentersLevel1}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ NumberofRentersLevel1: checked })
+                  }>Most Dense</Checkbox><br/>
+                
+                <Checkbox 
+                checked={NumberofRentersLevel2}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ NumberofRentersLevel2: checked })
+                  }>2nd Most Dense</Checkbox><br/>
+
+                <Checkbox 
+                checked={NumberofRentersLevel3}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ NumberofRentersLevel3: checked })
+                  }>3rd Most Dense</Checkbox><br/>
+            </Card>
+            </div>
+            <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+              <Card title="Demographic Index"
+                  bordered={true}
+                  style={{width: 210, height: 125}}
+                  size="small">
+                <Checkbox 
+                checked={DemographicIndexLevel1}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ DemographicIndexLevel1: checked })
+                  }>0-0.29</Checkbox><br/>
+                
+                <Checkbox 
+                checked={DemographicIndexLevel2}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ DemographicIndexLevel2: checked })
+                  }>0.30-0.69</Checkbox><br/>
+
+                <Checkbox 
+                checked={DemographicIndexLevel3}
+                onChange={({ target: { checked } }) =>
+                      this.setState({ DemographicIndexLevel3: checked })
+                  }>0.7-1.0</Checkbox><br/>
+            </Card>
+            </div>
+
+
+
           </div>
           <Collapse HouseholdIncomeLevel1={HouseholdIncomeLevel1}>
             <div style={{ height }} className="blob" />
@@ -337,7 +260,7 @@ class HouseholdIncome extends React.PureComponent {
 const Filter = (prop) => (
     <div className="app">
       <section className="section">
-        <h2>Household Income</h2>
+        
         <HouseholdIncome setFilterData={prop.setFilterData}/>
       </section>
     </div>
