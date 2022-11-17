@@ -3,8 +3,8 @@ import {GoogleMap, useJsApiLoader, Circle, MarkerF, InfoWindow} from '@react-goo
 import getDatapoint from "./locations"
 
 const containerStyle = {
-  width: '1200px',
-  height: '800px'
+  width: '850px',
+  height: '700px'
 };
 
 const center = {
