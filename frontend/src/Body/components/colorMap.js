@@ -29,6 +29,3 @@ const colorMap = {
 
 export default colorMap
 
-db.students.aggregate([{'$project':{_id:0, 'firstName':1, 'lastName':1}},{'$unwind': '$courseGrades'}, {'$sort': {'courseGrades.grade' : -1}}{'$match':{ 'courseGrades.courseName':'Biology'}},
-{'$limit': 1},
-]) 
