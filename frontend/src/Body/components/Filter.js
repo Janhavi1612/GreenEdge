@@ -247,7 +247,7 @@ class HouseholdIncome extends React.PureComponent {
                 <Checkbox
                     checked={ChargingStations}
                     onChange={({ target: { checked } }) =>
-                        this.setState({ CharginStations: checked })
+                        this.setState({ ChargingStations: checked })
                     }>Charging stations</Checkbox><br/>
                 <Checkbox
                     checked={CommunityCenters}
