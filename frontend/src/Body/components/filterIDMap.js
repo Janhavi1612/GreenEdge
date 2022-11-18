@@ -23,10 +23,8 @@ const filterMap = {
     'DemographicIndexLevel1': '020',
     'DemographicIndexLevel2': '021',
     'DemographicIndexLevel3': '022',
-}
 
-const colorMap = {
-
+    'ExistingEVOwners': '030',
 }
 
 export default filterMap;

@@ -16,6 +16,9 @@ const colorMap = {
 
     //Demographic index
     '02':'#4daf4a',
+
+    //marker
+    '03': '#000000'
 }
 
 export default colorMap

@@ -32,6 +32,8 @@ class HouseholdIncome extends React.PureComponent {
       DemographicIndexLevel2: false,
       DemographicIndexLevel3: false,
 
+      ExistingEVOwners: false,
+
     };
   }
 
@@ -64,13 +66,15 @@ class HouseholdIncome extends React.PureComponent {
       DemographicIndexLevel1,
       DemographicIndexLevel2,
       DemographicIndexLevel3,
+
+      ExistingEVOwners,
     } = this.state;
 
     this.props.setFilterData(this.state)
 
-    let filterData = {
-      '000' : false
-    }
+    // let filterData = {
+    //   '000' : false
+    // }
     //this.props.setFilterData(filterData)
     const height = 100;
 
@@ -237,9 +241,22 @@ class HouseholdIncome extends React.PureComponent {
             </Card>
             </div>
 
+            <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+              <Card title="Existing EV Owners"
+                    bordered={true}
+                    style={{width: 210, height: 125}}
+                    size="small">
+                <Checkbox
+                    checked={ExistingEVOwners}
+                    onChange={({ target: { checked } }) =>
+                        this.setState({ ExistingEVOwners: checked })
+                    }>show</Checkbox><br/>
+              </Card>
+            </div>
 
 
-          </div>
+
+          {/*</div>*/}
           <Collapse HouseholdIncomeLevel1={HouseholdIncomeLevel1}>
             <div style={{ height }} className="blob" />
           </Collapse>
@@ -253,6 +270,7 @@ class HouseholdIncome extends React.PureComponent {
             <div style={{ height }} className="blob" />
           </Collapse>
         </div>
+        </div>
     );
   }
 }
@@ -260,7 +278,6 @@ class HouseholdIncome extends React.PureComponent {
 const Filter = (prop) => (
     <div className="app">
       <section className="section">
-        
         <HouseholdIncome setFilterData={prop.setFilterData}/>
       </section>
     </div>

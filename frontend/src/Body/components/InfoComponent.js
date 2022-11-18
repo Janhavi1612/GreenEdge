@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 
 const columns = [
     {
-      title: 'Property Name',
-      dataIndex: 'name',
+      title: 'Name',
+      dataIndex: 'propName',
     },
     {
       title: 'Value',
@@ -14,31 +14,51 @@ const columns = [
   ];
 
 const InfoComponent = (props) => {
-    const data = [
+    let dataArray = [
         {
-          key: '1',
-          name: 'Longtitude',
-          value: props.text,
-        },
-        {
-          key: '2',
-          name: 'Latitude',
-          value: 32,
-        },
-        {
-          key: '3',
-          name: 'Population',
-          value: 'xxxxxxxx',
-        },
-
+            propName: 'empty',
+            value: 'empty'
+        }
     ]
+
+    const processDataInformation = () => {
+        let dataToShow = props.text
+        if (dataToShow !== '') {
+            dataArray = []
+            let jsonObject = JSON.parse(dataToShow)
+            for (var key in jsonObject) {
+                dataArray.push(
+                    {
+                        propName: key,
+                        value: jsonObject[key]
+                    }
+                )
+            }
+        }
+    }
+
+    processDataInformation();
+    // if (!dataToShow.equals('')) {
+        // let jsonObject = JSON.parse(dataToShow)
+    //     for (var key in jsonObject) {
+    //         dataArray.push(
+    //             {
+    //                 propName: key,
+    //                 value: jsonObject[key]
+    //             }
+    //         )
+    //     }
+    //
+    //
+    //     console.log(jsonObject)
+    // }
 
   return (
     <div>
         <Table 
         pagination={false} 
         columns={columns} 
-        dataSource={data} 
+        dataSource={dataArray}
         size="middle"
         bordered = "true" 
         />
