@@ -1,6 +1,8 @@
 const colorMap = {
     // Household income
-    '05':'#e41a1c',
+    '050':'#e41a1c',
+    '051':'#e41a1c',
+    '052':'#e41a1c',
 
     //Low Income Density - Most dense, second most dense,3rd most dense
     '000': '#275881',
@@ -23,10 +25,13 @@ const colorMap = {
 
 
     //marker
-    '03': '#000000',
+    '030': '#000000',
+    '040': '#000000',
+
+    //demographic index
     '020':'#82c780',
-    '021':'4daf4a',
-    '022':'367a34'
+    '021':'#4daf4a',
+    '022':'#367a34'
 }
 
 export default colorMap

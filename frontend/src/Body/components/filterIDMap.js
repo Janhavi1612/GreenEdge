@@ -24,7 +24,8 @@ const filterMap = {
     'DemographicIndexLevel2': '021',
     'DemographicIndexLevel3': '022',
 
-    'ExistingEVOwners': '030',
+    'ChargingStations': '030',
+    'CommunityCenters': '040'
 }
 
 export default filterMap;

@@ -7,10 +7,8 @@ class HouseholdIncome extends React.PureComponent {
     props.setFilterData('initial2')
     super(props);
     this.state = {
-      HouseholdIncomeLevel1: false,
-      HouseholdIncomeLevel2: false,
-      HouseholdIncomeLevel3: false,
-      HouseholdIncomeLevel4: false,
+      ChargingStations:false,
+      CommunityCenters:false,
 
       UnemploymentLevel1: false,
       UnemploymentLevel2: false,
@@ -32,7 +30,6 @@ class HouseholdIncome extends React.PureComponent {
       DemographicIndexLevel2: false,
       DemographicIndexLevel3: false,
 
-      ExistingEVOwners: false,
 
     };
   }
@@ -42,11 +39,8 @@ class HouseholdIncome extends React.PureComponent {
   render() {
 
     const {
-      HouseholdIncomeLevel1,
-      HouseholdIncomeLevel2,
-      HouseholdIncomeLevel3,
-      HouseholdIncomeLevel4,
-
+      ChargingStations,
+      CommunityCenters,
       UnemploymentLevel1,
       UnemploymentLevel2,
       UnemploymentLevel3,
@@ -67,14 +61,13 @@ class HouseholdIncome extends React.PureComponent {
       DemographicIndexLevel2,
       DemographicIndexLevel3,
 
-      ExistingEVOwners,
     } = this.state;
 
     this.props.setFilterData(this.state)
 
-    // let filterData = {
-    //   '000' : false
-    // }
+    let filterData = {
+      '000' : false
+    }
     //this.props.setFilterData(filterData)
     const height = 100;
 
@@ -82,36 +75,36 @@ class HouseholdIncome extends React.PureComponent {
         <div>
 
           <div>
-            <div style={{backgroundColor:"#D48C82", padding:"5px",width:"220px"}}>
-              <Card title="Household Income"
-                  bordered={true}
-                  style={{width: 210, height: 150}}
-                  size="small">
-                <Checkbox 
-                checked={HouseholdIncomeLevel1}
-                onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel1: checked })
-                  }>$35,000 to $74,999</Checkbox><br/>
-                
-                <Checkbox 
-                checked={HouseholdIncomeLevel2}
-                onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel2: checked })
-                  }>$75,000 to $99,999</Checkbox><br/>
+            {/*<div style={{backgroundColor:"#D48C82", padding:"5px",width:"220px"}}>*/}
+            {/*  <Card title="Household Income"*/}
+            {/*      bordered={true}*/}
+            {/*      style={{width: 210, height: 150}}*/}
+            {/*      size="small">*/}
+            {/*    <Checkbox */}
+            {/*    checked={HouseholdIncomeLevel1}*/}
+            {/*    onChange={({ target: { checked } }) =>*/}
+            {/*          this.setState({ HouseholdIncomeLevel1: checked })*/}
+            {/*      }>$35,000 to $74,999</Checkbox><br/>*/}
+            {/*    */}
+            {/*    <Checkbox */}
+            {/*    checked={HouseholdIncomeLevel2}*/}
+            {/*    onChange={({ target: { checked } }) =>*/}
+            {/*          this.setState({ HouseholdIncomeLevel2: checked })*/}
+            {/*      }>$75,000 to $99,999</Checkbox><br/>*/}
 
-                <Checkbox 
-                checked={HouseholdIncomeLevel3}
-                onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel3: checked })
-                  }>$100,000 to $150,000</Checkbox><br/>
+            {/*    <Checkbox */}
+            {/*    checked={HouseholdIncomeLevel3}*/}
+            {/*    onChange={({ target: { checked } }) =>*/}
+            {/*          this.setState({ HouseholdIncomeLevel3: checked })*/}
+            {/*      }>$100,000 to $150,000</Checkbox><br/>*/}
 
-                <Checkbox 
-                checked={HouseholdIncomeLevel4}
-                onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel4: checked })
-                  }>$150,000+</Checkbox><br/>
-            </Card>
-            </div>
+            {/*    <Checkbox */}
+            {/*    checked={HouseholdIncomeLevel4}*/}
+            {/*    onChange={({ target: { checked } }) =>*/}
+            {/*          this.setState({ HouseholdIncomeLevel4: checked })*/}
+            {/*      }>$150,000+</Checkbox><br/>*/}
+            {/*</Card>*/}
+            {/*</div>*/}
               
 
             <div style={{backgroundColor:"#A57CAB", padding:"5px",width:"220px"}}>
@@ -242,33 +235,43 @@ class HouseholdIncome extends React.PureComponent {
             </div>
 
             <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
-              <Card title="Existing EV Owners"
+              <Card title="Markers"
                     bordered={true}
                     style={{width: 210, height: 125}}
                     size="small">
+                {/*<Checkbox*/}
+                {/*    checked={ExistingEVOwners}*/}
+                {/*    onChange={({ target: { checked } }) =>*/}
+                {/*        this.setState({ ExistingEVOwners: checked })*/}
+                {/*    }>EV owners</Checkbox><br/>*/}
                 <Checkbox
-                    checked={ExistingEVOwners}
+                    checked={ChargingStations}
                     onChange={({ target: { checked } }) =>
-                        this.setState({ ExistingEVOwners: checked })
-                    }>show</Checkbox><br/>
+                        this.setState({ CharginStations: checked })
+                    }>Charging stations</Checkbox><br/>
+                <Checkbox
+                    checked={CommunityCenters}
+                    onChange={({ target: { checked } }) =>
+                        this.setState({ CommunityCenters: checked })
+                    }>Community centers</Checkbox><br/>
               </Card>
             </div>
 
 
 
           {/*</div>*/}
-          <Collapse HouseholdIncomeLevel1={HouseholdIncomeLevel1}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
-          <Collapse HouseholdIncomeLevel2={HouseholdIncomeLevel2}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
-          <Collapse HouseholdIncomeLevel3={HouseholdIncomeLevel3}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
-          <Collapse HouseholdIncomeLevel4={HouseholdIncomeLevel4}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
+          {/*<Collapse HouseholdIncomeLevel1={HouseholdIncomeLevel1}>*/}
+          {/*  <div style={{ height }} className="blob" />*/}
+          {/*</Collapse>*/}
+          {/*<Collapse HouseholdIncomeLevel2={HouseholdIncomeLevel2}>*/}
+          {/*  <div style={{ height }} className="blob" />*/}
+          {/*</Collapse>*/}
+          {/*<Collapse HouseholdIncomeLevel3={HouseholdIncomeLevel3}>*/}
+          {/*  <div style={{ height }} className="blob" />*/}
+          {/*</Collapse>*/}
+          {/*<Collapse HouseholdIncomeLevel4={HouseholdIncomeLevel4}>*/}
+          {/*  <div style={{ height }} className="blob" />*/}
+          {/*</Collapse>*/}
         </div>
         </div>
     );

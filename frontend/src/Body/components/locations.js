@@ -40,9 +40,10 @@ function generateFilterData(selectedFilters) {
     //Add color to each object
     generatedFilterdata = generatedFilterdata.map(item => {
         //return {...item, color:colorMap[item.id.substring(0,2)], data:item.name}
-        return {...item, color:colorMap[item.id.substring(0, 2)]}
+        return {...item, color:colorMap[item.id.toString()]}
     })
 
+    console.log(generatedFilterdata)
     return generatedFilterdata
 }
 
