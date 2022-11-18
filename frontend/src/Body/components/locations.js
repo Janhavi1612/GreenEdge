@@ -1,8 +1,3 @@
-//Given the form input, extract the center locations and determine colors.
-//Household Income: #2596be (blue)
-// Unemployment : #e07b39   (orange)
-// Population Density : #00cc66 (Green)
-
 import data from "../../data/data.json"
 import filterMap from './filterIDMap'
 import colorMap from "./colorMap";
@@ -44,9 +39,11 @@ function generateFilterData(selectedFilters) {
 
     //Add color to each object
     generatedFilterdata = generatedFilterdata.map(item => {
-        return {...item, color:colorMap[item.id.substring(0,2)], data:item.name}
+        //return {...item, color:colorMap[item.id.substring(0,2)], data:item.name}
+        return {...item, color:colorMap[item.id.toString()]}
     })
 
+    console.log(generatedFilterdata)
     return generatedFilterdata
 }
 

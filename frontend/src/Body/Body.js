@@ -15,20 +15,21 @@ const Body = () => {
     const [filterData, setFilterData] = useState('initialData')
     //const filter values
   return (
-    <Row  style={{marginLeft: "60px", marginTop:"20px"}}>
+    <Row  style={{marginLeft: "60px", marginTop:"20px", marginRight:"60px"}}>
       <Col>
       <Row style={{ marginRight: "90px"}}><Filter setFilterData={setFilterData}/></Row>
-  
-          {/*<Row style={{paddingTop:"20px"}}><InfoComponent text={text} /></Row>*/}
       </Col>
-      <Col>
-        <Row><InfoComponent text={text} /></Row>
-        <Row style={{paddingTop:"20px"}}><Export /></Row>
+      <Col style={{ marginRight: "90px"}}>
+          <Row><MyComponent setText={setText} filterData={filterData}/></Row>
       </Col>
-      <Col>
-      <Row><MyComponent setText={setText} filterData={filterData}/></Row>
-       
-      </Col>
+
+        <Col style={{ marginRight: "90px", width:"300px"}}>
+            <Row style={{paddingLeft:"50px"}}><InfoComponent text={text} /></Row>
+        </Col>
+
+        <Col style={{ marginRight: "90px"}}>
+            <Row ><Export /></Row>
+        </Col>
     </Row>
 
   )
