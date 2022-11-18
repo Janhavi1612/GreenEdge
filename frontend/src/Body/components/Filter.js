@@ -7,10 +7,8 @@ class HouseholdIncome extends React.PureComponent {
     props.setFilterData('initial2')
     super(props);
     this.state = {
-      HouseholdIncomeLevel1: false,
-      HouseholdIncomeLevel2: false,
-      HouseholdIncomeLevel3: false,
-      HouseholdIncomeLevel4: false,
+      ChargingStations:false,
+      CommunityCenters:false,
 
       UnemploymentLevel1: false,
       UnemploymentLevel2: false,
@@ -40,11 +38,8 @@ class HouseholdIncome extends React.PureComponent {
   render() {
 
     const {
-      HouseholdIncomeLevel1,
-      HouseholdIncomeLevel2,
-      HouseholdIncomeLevel3,
-      HouseholdIncomeLevel4,
-
+      ChargingStations,
+      CommunityCenters,
       UnemploymentLevel1,
       UnemploymentLevel2,
       UnemploymentLevel3,
@@ -77,57 +72,9 @@ class HouseholdIncome extends React.PureComponent {
     return (
         <div>
           <div className="config">
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel1}
-                  onChange={({ target: { checked } }) => {
-                    this.setState({HouseholdIncomeLevel1: checked})
-                    //this.props.setFilterData()
-                  }
-                  }
-              />
-              $35,000 to $74,999
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel2}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel2: checked })
-                  }
-              />
-              $75,000 to $99,999
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel3}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel3: checked })
-                  }
-              />
-              $100,000 to $150,000
-            </label>
-            <br></br>
-            <label className="label">
-              <input
-                  className="input"
-                  type="checkbox"
-                  checked={HouseholdIncomeLevel4}
-                  onChange={({ target: { checked } }) =>
-                      this.setState({ HouseholdIncomeLevel4: checked })
-                  }
-              />
-              $150,000+
-            </label>
-            <br></br>
-            <h2>Unemployment</h2>
+  
+           
+            <h2>Low Income Density</h2>
             <label className="label">
               <input
                   className="input"
@@ -312,23 +259,36 @@ class HouseholdIncome extends React.PureComponent {
               0.7-1.0
             </label>
             <br></br>
-
+            <h2>Charging Stations</h2>
+            <label className="label">
+              <input
+                  className="input"
+                  type="checkbox"
+                  checked={ChargingStations}
+                  onChange={({ target: { checked } }) =>
+                      this.setState({ ChargingStations: checked })
+                  }
+              />
+              Charging Station Locations
+            </label>
+            <br></br>
+            <h2>Community Centers</h2>
+            <label className="label">
+              <input
+                  className="input"
+                  type="checkbox"
+                  checked={CommunityCenters}
+                  onChange={({ target: { checked } }) =>
+                      this.setState({ CommunityCenters: checked })
+                  }
+              />
+              Community Center Locations
+            </label>
             {/*<Button type="primary" shape="round">*/}
             {/*  Submit*/}
             {/*</Button>*/}
           </div>
-          <Collapse HouseholdIncomeLevel1={HouseholdIncomeLevel1}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
-          <Collapse HouseholdIncomeLevel2={HouseholdIncomeLevel2}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
-          <Collapse HouseholdIncomeLevel3={HouseholdIncomeLevel3}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
-          <Collapse HouseholdIncomeLevel4={HouseholdIncomeLevel4}>
-            <div style={{ height }} className="blob" />
-          </Collapse>
+         
         </div>
     );
   }

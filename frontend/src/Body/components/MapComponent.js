@@ -1,7 +1,7 @@
 import React from 'react'
 import {GoogleMap, useJsApiLoader, Circle, MarkerF, InfoWindow} from '@react-google-maps/api';
-import getDatapoint from "./locations"
-import getMarkers from "./getMarkerPoints"
+import generateFilterData from "./locations"
+import generateMarkerFilterData from "./getMarkerPoints"
 
 const containerStyle = {
   width: '1600px',
@@ -16,11 +16,11 @@ const center = {
 
 
 const onLoad = circle => {
-  console.log('Circle onLoad circle: ', circle)
+  //console.log('Circle onLoad circle: ', circle)
 }
 
 const onUnmount = circle => {
-  console.log('Circle onUnmount circle: ', circle)
+  //console.log('Circle onUnmount circle: ', circle)
 }
 //
 // let options = {
@@ -87,10 +87,10 @@ function MyComponent(prop) {
     lng: -77.0916161}
     
   
-  var datapoints = getDatapoint()
-  var markerpoints = getMarkers()
-  console.log("markerpoints")
-  console.log(markerpoints)
+  var datapoints = generateFilterData(prop.filterData)
+  var markerpoints = generateMarkerFilterData(prop.filterData)
+  // console.log("markerpoints")
+  // console.log(markerpoints)
   //add condition for not found
   var metadata = []
   for(var i=0; i< datapoints.length;i++){

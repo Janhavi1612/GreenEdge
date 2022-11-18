@@ -33,14 +33,16 @@ import colorMap from "./colorMap";
 //     return selectedFilters
 // }
 
+const markerFilters = ['030','040']
+
 
 function generateFilterData(selectedFilters) {
-    let generatedFilterdata = data.data.filter(item => selectedFilters.includes(item.id))
+    let generatedFilterdata = data.data.filter(item => (selectedFilters.includes(item.id) && !markerFilters.includes(item.id)))
 
     //Add color to each object
     generatedFilterdata = generatedFilterdata.map(item => {
         //return {...item, color:colorMap[item.id.substring(0,2)], data:item.name}
-        return {...item, color:colorMap[item.id.substring(0,]}
+        return {...item, color:colorMap[item.id]}
     })
 
     return generatedFilterdata
