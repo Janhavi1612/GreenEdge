@@ -1,10 +1,10 @@
 import React from 'react'
-import {GoogleMap, useJsApiLoader, Circle, MarkerF, InfoWindow} from '@react-google-maps/api';
+import {GoogleMap, useJsApiLoader, Circle, MarkerF, InfoWindow, CircleF} from '@react-google-maps/api';
 import getDatapoint from "./locations"
 import getMarkers from "./getMarkerPoints"
 
 const containerStyle = {
-  width: '850px',
+  width: '1200px',
   height: '700px'
 // =======
 //   width: '1600px',
@@ -30,7 +30,7 @@ function createCircle(metadata, prop){
 
     return(<Circle
     center={metadata.center}
-    options={{fillColor: metadata.color, strokeColor:metadata.color, strokeOpacity: 0.5, fillOpacity: 0.5 , radius: 400}}
+    options={{fillColor: metadata.color, strokeColor:metadata.color, strokeOpacity: 0.5, fillOpacity: 0.5 , radius: 600}}
     onMouseOver={() => onCircleHover(metadata)}
     onMouseOut={() => onMouseUpCircle()}
   />
@@ -70,15 +70,15 @@ function MyComponent(prop) {
     googleMapsApiKey: 'AIzaSyD5ernPUMCOp0QHET9gPW5XPyHVKpHVn5E'
   })
 
-  const center = {lat: 40.0146129,
-    lng: -77.0916161}
+  const center = {lat: 40.443439,
+    lng: -79.984177}
 
 
   let datapoints = getDatapoint(prop.filterData)
 
   let metadata = []
   for(let i=0; i< datapoints.length;i++){
-    datapoints[i].centers.map(point => (metadata.push({center:point.center, color: datapoints[i].color, isMarker:point.isMarker,values:JSON.stringify(point.values)})))
+    datapoints[i].centers.map(point => (metadata.push({center:point.center, color: datapoints[i].color, values:JSON.stringify(point.values)})))
   }
  
 
@@ -95,6 +95,6 @@ function MyComponent(prop) {
 }
 
 
-export default MyComponent
+export default React.memo(MyComponent)
 
 

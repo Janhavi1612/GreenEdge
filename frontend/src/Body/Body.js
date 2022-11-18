@@ -1,11 +1,8 @@
 import React, {useState} from 'react'
 import 'antd/dist/antd.min.css';
 import Filter from './components/Filter';
-import Toggle from './components/Toggle';
 import Export from './components/Export';
-import RenderMap from './components/Map';
-import FetchJson from "../DataService/Fetch";
-import RangeSlider from './components/Slider';
+
 import MyComponent from './components/MapComponent';
 import InfoComponent from './components/InfoComponent';
 import { Col, Row } from 'antd';
@@ -19,17 +16,15 @@ const Body = () => {
       <Col>
       <Row style={{ marginRight: "90px"}}><Filter setFilterData={setFilterData}/></Row>
       </Col>
-      <Col style={{ marginRight: "90px"}}>
+      <Col >
           <Row><MyComponent setText={setText} filterData={filterData}/></Row>
       </Col>
 
-        <Col style={{ marginRight: "90px", width:"300px"}}>
-            <Row style={{paddingLeft:"50px"}}><InfoComponent text={text} /></Row>
-        </Col>
-
-        <Col style={{ marginRight: "90px"}}>
+        <Col style={{width:"30px"}}>
+            <Row style={{paddingLeft:"50px", height: "520px"}}><InfoComponent text={text} /></Row>
             <Row ><Export /></Row>
         </Col>
+
     </Row>
 
   )

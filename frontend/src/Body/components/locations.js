@@ -1,4 +1,4 @@
-import data from "../../data/data.json"
+import data from "../../data/locations3.json"
 import filterMap from './filterIDMap'
 import colorMap from "./colorMap";
 //input we would get from form UI
@@ -43,7 +43,7 @@ function generateFilterData(selectedFilters) {
         return {...item, color:colorMap[item.id.toString()]}
     })
 
-    console.log(generatedFilterdata)
+
     return generatedFilterdata
 }
 
