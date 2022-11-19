@@ -37,7 +37,7 @@ import {
                 text: "Dolan Miu",
                 heading: HeadingLevel.TITLE
               }),
-              this.createContactInfo(PHONE_NUMBER, PROFILE_URL, EMAIL),
+              this.createSourceInfo(PHONE_NUMBER, PROFILE_URL, EMAIL),
               this.createHeading("Education"),
               ...educations
                 .map(education => {
@@ -119,21 +119,23 @@ import {
       return document;
     }
   
-    public createContactInfo(
-      phoneNumber: string,
-      profileUrl: string,
-      email: string
+    public createSourceInfo(
+      provider: string,
+      websiteUrl: string,
+      date: string
     ): Paragraph {
       return new Paragraph({
-        alignment: AlignmentType.CENTER,
+        alignment: AlignmentType.LEFT,
         children: [
           new TextRun(
-            `Mobile: ${phoneNumber} | LinkedIn: ${profileUrl} | Email: ${email}`
+            `Provider: ${provider}`
           ),
-          new TextRun({
-            text: "Address: 58 Elm Avenue, Kent ME4 6ER, UK",
-            break: 1
-          })
+          new TextRun(
+            `Website: ${websiteUrl}`
+          ),
+          new TextRun(
+            `Download Date: ${date}`
+          )
         ]
       });
     }
