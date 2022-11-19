@@ -36,9 +36,9 @@ const Export = () => {
   
   return (
     <div>
-        {/* <Button onClick={generateWordDocument} type="primary" shape="round" icon={<DownloadOutlined />} size={size}>
+        <Button onClick={generateWordDocument} type="primary" shape="round" icon={<DownloadOutlined />} size={size}>
         Export docx file
-        </Button> */}
+        </Button>
         <Button onClick={generateReportDocument} type="primary" shape="round" icon={<DownloadOutlined />} size={size}>
         Export report
         </Button>
