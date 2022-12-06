@@ -23,10 +23,9 @@ const filterMap = {
     'DemographicIndexLevel1': '020',
     'DemographicIndexLevel2': '021',
     'DemographicIndexLevel3': '022',
-}
 
-const colorMap = {
-
+    'ChargingStations': '030',
+    'CommunityCenters': '040'
 }
 
 export default filterMap;
