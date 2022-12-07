@@ -1,15 +1,10 @@
 import React from 'react'
-import {GoogleMap, useJsApiLoader, Circle, MarkerF, InfoWindow, CircleF} from '@react-google-maps/api';
+import {GoogleMap, useJsApiLoader, Circle, MarkerF} from '@react-google-maps/api';
 import getDatapoint from "./locations"
-import getMarkers from "./getMarkerPoints"
 
 const containerStyle = {
   width: '1200px',
   height: '700px'
-// =======
-//   width: '1600px',
-//   height: '1200px'
-// >>>>>>> 86fa3394eb88e11aeabcf88db1e5f7672f6f1c8f
 };
 
 //define later

@@ -5,6 +5,8 @@ import {
   Paragraph,
   TextRun,
   } from "docx";
+
+import getDataPointJSON from "../../components/locationsJSON"
 import { Children } from "react";
   export class DocumentCreator {
     // tslint:disable-next-line: typedef
@@ -15,8 +17,10 @@ import { Children } from "react";
         thematicBreak: true
       });
     }
-    public create(exportDataString, id): Document {
-      const centers = JSON.parse(exportDataString).data.find((dp) => dp.id === id).centers;
+    public create(exportDataString, id, filterData): Document {
+
+      let selectedFilterIDs =  getDataPointJSON(filterData)
+      const centers = JSON.parse(exportDataString).data.find((dp) => selectedFilterIDs.includes(dp.id)).centers;
 
       const document = new Document({
         sections: [
@@ -44,7 +48,7 @@ import { Children } from "react";
                   arr.push(
                   new Paragraph({
                     alignment: AlignmentType.LEFT,
-                    text: `Longitude: ${JSON.stringify(center.center.lng)}   Latitude: ${JSON.stringify(center.center.lag)}`,
+                    text: `Longitude: ${JSON.stringify(center.center.lng)}   Latitude: ${JSON.stringify(center.center.lat)}`,
                     spacing: {
                       after: 120
                   },
@@ -92,19 +96,5 @@ import { Children } from "react";
       return document;
       
     }
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-
-  
   }
   
