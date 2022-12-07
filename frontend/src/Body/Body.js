@@ -10,7 +10,7 @@ import { Col, Row } from 'antd';
 const Body = () => {
     const [text, setText] = useState('')
     const [filterData, setFilterData] = useState('initialData')
-    const idString = "001"
+    const idString = useState("001")
     //const filter values
   return (
     <Row  style={{marginLeft: "60px", marginTop:"20px", marginRight:"60px"}}>
@@ -23,7 +23,7 @@ const Body = () => {
 
         <Col style={{width:"30px"}}>
             <Row style={{paddingLeft:"50px", height: "520px"}}><InfoComponent text={text} /></Row>
-            <Row ><Export idString/></Row>
+            <Row ><Export idString={idString} filterData={filterData}/></Row>
         </Col>
 
     </Row>

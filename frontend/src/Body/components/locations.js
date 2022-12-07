@@ -1,6 +1,7 @@
 import data from "../../data/locations3.json"
 import filterMap from './filterIDMap'
 import colorMap from "./colorMap";
+import {writeFile} from "fs-web/lib/core";
 //input we would get from form UI
 // map for varname to filter id
 //
@@ -40,9 +41,14 @@ function generateFilterData(selectedFilters) {
     //Add color to each object
     generatedFilterdata = generatedFilterdata.map(item => {
         //return {...item, color:colorMap[item.id.substring(0,2)], data:item.name}
-        return {...item, color:colorMap[item.id.toString()]}
+        // const jsonString = JSON.stringify(item)
+        // console.log(jsonString)
+        // writeFile("data2.json", "dummy")
+        //     .then(r => {
+        //         console.log("written!")
+        //     })
+        return {...item, color: colorMap[item.id.toString()]}
     })
-
 
     return generatedFilterdata
 }
