@@ -2,18 +2,41 @@ import { Table } from 'antd';
 import React, { useEffect, useState } from 'react';
 
 
-// const columns = [
-//     {
-//         title: 'Property Name',
-//         dataIndex: 'name',
-//     },
-//     {
-//         title: 'Value',
-//         dataIndex: 'value',
-//     },
-// ];
+const columns = [
+    {
+        title: 'Property Name',
+        dataIndex: 'name',
+    },
+    {
+        title: 'Value',
+        dataIndex: 'value',
+    },
+];
 
 const InfoComponent = (props) => {
+    let dataArray = [
+        {
+            name: 'empty',
+            value: 'empty'
+        }]
+
+    const processDataInformation = () => {
+        let dataToShow = props.text
+        if (dataToShow !== '') {
+            dataArray = []
+            let jsonObject = JSON.parse(dataToShow)
+            for (var key in jsonObject) {
+                dataArray.push(
+                    {
+                        name: key,
+                        value: jsonObject[key]
+                    }
+                )
+            }
+        }
+    }
+
+    processDataInformation();
     // const data = [
     //     {
     //         key: '1',
@@ -34,17 +57,15 @@ const InfoComponent = (props) => {
     // ]
 
     return (
-        // <div>
-        //     <Table
-        //         pagination={false}
-        //         columns={columns}
-        //         dataSource={data}
-        //         size="middle"
-        //         bordered = "true"
-        //     />
-        // </div>
-
-        <h3>{props.text}</h3>
+        <div>
+            <Table
+                pagination={false}
+                columns={columns}
+                dataSource={dataArray}
+                size="middle"
+                bordered = "true"
+            />
+        </div>
     )
 }
 

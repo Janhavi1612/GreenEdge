@@ -107,11 +107,13 @@ class HouseholdIncome extends React.PureComponent {
             {/*</div>*/}
               
 
-            <div style={{backgroundColor:"#A57CAB", padding:"5px",width:"220px"}}>
+            <div style={{padding:"5px",width:"220px"}}>
               <Card title="Unemployment"
+                  hoverable
                   bordered={true}
                   style={{width: 210, height: 125}}
-                  size="small">
+                  size="small"
+                  headStyle={{backgroundColor: '#87b2d4'}}>
                 <Checkbox 
                 checked={UnemploymentLevel1}
                 onChange={({ target: { checked } }) =>
@@ -132,11 +134,13 @@ class HouseholdIncome extends React.PureComponent {
             </Card>
             </div>
             
-            <div style={{backgroundColor:"#E2B586", padding:"5px",width:"220px"}}>
+            <div style={{padding:"5px",width:"220px"}}>
               <Card title="Population Density"
+                  hoverable
                   bordered={true}
                   style={{width: 210, height: 125}}
-                  size="small">
+                  size="small"
+                  headStyle={{backgroundColor: '#ffa54d'}}>
                 <Checkbox 
                 checked={PopulationDensityLevel1}
                 onChange={({ target: { checked } }) =>
@@ -158,11 +162,13 @@ class HouseholdIncome extends React.PureComponent {
             </div>
 
             
-            <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+            <div style={{padding:"5px",width:"220px"}}>
               <Card title="Number of Home Owners"
+                  hoverable
                   bordered={true}
                   style={{width: 210, height: 125}}
-                  size="small">
+                  size="small"
+                  headStyle={{backgroundColor: '#a64da6'}}>
                 <Checkbox 
                 checked={NumberofHomeOwnersLevel1}
                 onChange={({ target: { checked } }) =>
@@ -185,11 +191,13 @@ class HouseholdIncome extends React.PureComponent {
 
             
 
-          <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+          <div style={{padding:"5px",width:"220px"}}>
               <Card title="Number of Renters"
+                  hoverable
                   bordered={true}
                   style={{width: 210, height: 125}}
-                  size="small">
+                  size="small"
+                  headStyle={{backgroundColor: '#f9a7d2'}}>
                 <Checkbox 
                 checked={NumberofRentersLevel1}
                 onChange={({ target: { checked } }) =>
@@ -209,11 +217,13 @@ class HouseholdIncome extends React.PureComponent {
                   }>3rd Most Dense</Checkbox><br/>
             </Card>
             </div>
-            <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+            <div style={{padding:"5px",width:"220px"}}>
               <Card title="Demographic Index"
+                  hoverable
                   bordered={true}
                   style={{width: 210, height: 125}}
-                  size="small">
+                  size="small"
+                  headStyle={{backgroundColor: '#367a34'}}>
                 <Checkbox 
                 checked={DemographicIndexLevel1}
                 onChange={({ target: { checked } }) =>
@@ -234,8 +244,9 @@ class HouseholdIncome extends React.PureComponent {
             </Card>
             </div>
 
-            <div style={{backgroundColor:"#ececec", padding:"5px",width:"220px"}}>
+            <div style={{padding:"5px",width:"220px"}}>
               <Card title="Markers"
+                    hoverable
                     bordered={true}
                     style={{width: 210, height: 125}}
                     size="small">
