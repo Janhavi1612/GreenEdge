@@ -4,7 +4,7 @@ import { Button} from 'antd';
 import { saveAs } from "file-saver";
 import { Packer } from "docx";
 import { DocumentCreator as DocumentGenerator } from "./data/report-generator.ts";
-import * as ExportData from "../../data/locations3.json";
+import * as ExportData from "../../data/locations_final.json";
 const Export = (prop) => {
   const [size, setSize] = useState('medium');
   const generateReportDocument = () =>{

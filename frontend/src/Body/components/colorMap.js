@@ -15,7 +15,7 @@ const colorMap = {
     '012': '#ffa54d',
     //number of home owners
     '060': '#5a005a',
-    '061':'#800080',
+    '061':'#800070',
     '062':'#a64da6',
 
     //number of renters

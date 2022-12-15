@@ -249,6 +249,7 @@ class HouseholdIncome extends React.PureComponent {
                     hoverable
                     bordered={true}
                     style={{width: 210, height: 125}}
+                    headStyle={{backgroundColor: 'red'}}
                     size="small">
                 {/*<Checkbox*/}
                 {/*    checked={ExistingEVOwners}*/}

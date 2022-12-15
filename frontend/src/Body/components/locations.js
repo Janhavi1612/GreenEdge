@@ -1,4 +1,4 @@
-import data from "../../data/locations3.json"
+import data from "../../data/locations_final.json"
 import filterMap from './filterIDMap'
 import colorMap from "./colorMap";
 import {writeFile} from "fs-web/lib/core";
