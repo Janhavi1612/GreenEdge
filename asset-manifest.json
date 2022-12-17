@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GreenEdge/static/css/main.4ee33a96.css",
+    "main.js": "/GreenEdge/static/js/main.673f5bb8.js",
+    "static/js/787.e86a563f.chunk.js": "/GreenEdge/static/js/787.e86a563f.chunk.js",
+    "index.html": "/GreenEdge/index.html",
+    "main.4ee33a96.css.map": "/GreenEdge/static/css/main.4ee33a96.css.map",
+    "main.673f5bb8.js.map": "/GreenEdge/static/js/main.673f5bb8.js.map",
+    "787.e86a563f.chunk.js.map": "/GreenEdge/static/js/787.e86a563f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ee33a96.css",
+    "static/js/main.673f5bb8.js"
+  ]
+}
