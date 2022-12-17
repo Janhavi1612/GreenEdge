@@ -1,6 +1,6 @@
+//Display filters
 import React from "react";
-import { Collapse } from "react-collapse";
-import { Button,Checkbox, Card } from "antd";
+import {Checkbox, Card } from "antd";
 
 class HouseholdIncome extends React.PureComponent {
   constructor(props) {
@@ -68,45 +68,12 @@ class HouseholdIncome extends React.PureComponent {
     let filterData = {
       '000' : false
     }
-    //this.props.setFilterData(filterData)
     const height = 100;
 
     return (
         <div>
 
           <div>
-            {/*<div style={{backgroundColor:"#D48C82", padding:"5px",width:"220px"}}>*/}
-            {/*  <Card title="Household Income"*/}
-            {/*      bordered={true}*/}
-            {/*      style={{width: 210, height: 150}}*/}
-            {/*      size="small">*/}
-            {/*    <Checkbox */}
-            {/*    checked={HouseholdIncomeLevel1}*/}
-            {/*    onChange={({ target: { checked } }) =>*/}
-            {/*          this.setState({ HouseholdIncomeLevel1: checked })*/}
-            {/*      }>$35,000 to $74,999</Checkbox><br/>*/}
-            {/*    */}
-            {/*    <Checkbox */}
-            {/*    checked={HouseholdIncomeLevel2}*/}
-            {/*    onChange={({ target: { checked } }) =>*/}
-            {/*          this.setState({ HouseholdIncomeLevel2: checked })*/}
-            {/*      }>$75,000 to $99,999</Checkbox><br/>*/}
-
-            {/*    <Checkbox */}
-            {/*    checked={HouseholdIncomeLevel3}*/}
-            {/*    onChange={({ target: { checked } }) =>*/}
-            {/*          this.setState({ HouseholdIncomeLevel3: checked })*/}
-            {/*      }>$100,000 to $150,000</Checkbox><br/>*/}
-
-            {/*    <Checkbox */}
-            {/*    checked={HouseholdIncomeLevel4}*/}
-            {/*    onChange={({ target: { checked } }) =>*/}
-            {/*          this.setState({ HouseholdIncomeLevel4: checked })*/}
-            {/*      }>$150,000+</Checkbox><br/>*/}
-            {/*</Card>*/}
-            {/*</div>*/}
-              
-
             <div style={{padding:"5px",width:"220px"}}>
               <Card title="Unemployment"
                   hoverable
@@ -187,9 +154,7 @@ class HouseholdIncome extends React.PureComponent {
                       this.setState({ NumberofHomeOwnersLevel3: checked })
                   }>3rd Most Dense</Checkbox><br/>
             </Card>
-            </div>
-
-            
+            </div>          
 
           <div style={{padding:"5px",width:"220px"}}>
               <Card title="Number of Renters"
@@ -251,11 +216,7 @@ class HouseholdIncome extends React.PureComponent {
                     style={{width: 210, height: 125}}
                     headStyle={{backgroundColor: 'red'}}
                     size="small">
-                {/*<Checkbox*/}
-                {/*    checked={ExistingEVOwners}*/}
-                {/*    onChange={({ target: { checked } }) =>*/}
-                {/*        this.setState({ ExistingEVOwners: checked })*/}
-                {/*    }>EV owners</Checkbox><br/>*/}
+               
                 <Checkbox
                     checked={ChargingStations}
                     onChange={({ target: { checked } }) =>
@@ -268,22 +229,6 @@ class HouseholdIncome extends React.PureComponent {
                     }>Community centers</Checkbox><br/>
               </Card>
             </div>
-
-
-
-          {/*</div>*/}
-          {/*<Collapse HouseholdIncomeLevel1={HouseholdIncomeLevel1}>*/}
-          {/*  <div style={{ height }} className="blob" />*/}
-          {/*</Collapse>*/}
-          {/*<Collapse HouseholdIncomeLevel2={HouseholdIncomeLevel2}>*/}
-          {/*  <div style={{ height }} className="blob" />*/}
-          {/*</Collapse>*/}
-          {/*<Collapse HouseholdIncomeLevel3={HouseholdIncomeLevel3}>*/}
-          {/*  <div style={{ height }} className="blob" />*/}
-          {/*</Collapse>*/}
-          {/*<Collapse HouseholdIncomeLevel4={HouseholdIncomeLevel4}>*/}
-          {/*  <div style={{ height }} className="blob" />*/}
-          {/*</Collapse>*/}
         </div>
         </div>
     );

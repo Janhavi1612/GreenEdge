@@ -1,13 +1,11 @@
 import { Slider } from 'antd';
-
-import React, { useState } from 'react';
 import 'antd/dist/antd.min.css';
 
 
 const RangeSlider = () => {
   
-  let min = 0;
-  let max=100;
+
+
   let disabled = false
   const marks = {
     0: {
@@ -32,19 +30,6 @@ const RangeSlider = () => {
     </div>
   );
 
-// return(
-//     <div>
-// <Slider
-//           className="slider-main-div"
-//           min={min}
-//           max={max}
-          
-//           range={true}
-//           defaultValue={[min, max]}
-//           value={[min, max]}
-//         />
-//     </div>
-// )
 };
 export default RangeSlider;
 

@@ -1,3 +1,4 @@
+//Map filter names to index codes
 const filterMap = {
     'HouseholdIncomeLevel1': '050',
     'HouseholdIncomeLevel2': '051',

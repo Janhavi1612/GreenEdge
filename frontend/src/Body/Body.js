@@ -11,7 +11,6 @@ const Body = () => {
     const [text, setText] = useState('')
     const [filterData, setFilterData] = useState('initialData')
     const idString = useState("001")
-    //const filter values
   return (
     <Row  style={{marginLeft: "60px", marginTop:"20px", marginRight:"60px"}}>
       <Col>

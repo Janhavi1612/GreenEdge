@@ -6,7 +6,7 @@ import { Packer } from "docx";
 import { DocumentCreator as DocumentGenerator } from "./data/report-generator.ts";
 import * as ExportData from "../../data/locations_final.json";
 const Export = (prop) => {
-  const [size, setSize] = useState('medium');
+  const [size] = useState('medium');
   const generateReportDocument = () =>{
     const documentCreator = new DocumentGenerator();
     const exportdataString = JSON.stringify(ExportData);
@@ -23,9 +23,7 @@ const Export = (prop) => {
         <Button onClick={generateReportDocument} type="primary" shape="round" icon={<DownloadOutlined />} size={size}>
         Export report
         </Button>
-    </div>
-
-      
+    </div>     
   )
 }
 

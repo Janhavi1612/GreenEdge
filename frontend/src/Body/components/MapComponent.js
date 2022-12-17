@@ -1,5 +1,6 @@
 import React from 'react'
 import {GoogleMap, useJsApiLoader, Circle, MarkerF} from '@react-google-maps/api';
+import env from "react-dotenv";
 import getDatapoint from "./locations"
 
 const containerStyle = {
@@ -60,10 +61,13 @@ function createPolygon(point, prop) {
 }
 
 function MyComponent(prop) {
+  console.log("API")
+  console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyD5ernPUMCOp0QHET9gPW5XPyHVKpHVn5E'
+    googleMapsApiKey: env.REACT_APP_GOOGLE_MAPS_API_KEY
   })
+ 
 
   const center = {lat: 40.443439,
     lng: -79.984177}

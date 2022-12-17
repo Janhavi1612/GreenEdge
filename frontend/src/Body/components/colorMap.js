@@ -1,10 +1,11 @@
+//Mapping of index to color codes on the map
 const colorMap = {
     // Household income
     '050':'#e41a1c',
     '051':'#e41a1c',
     '052':'#e41a1c',
 
-    //Low Income Density - Most dense, second most dense,3rd most dense
+    //Low Income Density
     '000': '#275881',
     '001':'#4b8bbf',
     '002':'#87b2d4',
