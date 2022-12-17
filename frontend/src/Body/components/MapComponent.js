@@ -65,7 +65,8 @@ function MyComponent(prop) {
   console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: env.REACT_APP_GOOGLE_MAPS_API_KEY
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    // googleMapsApiKey: 'AIzaSyD5ernPUMCOp0QHET9gPW5XPyHVKpHVn5E'
   })
  
 
